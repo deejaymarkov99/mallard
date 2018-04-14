@@ -1,23 +1,33 @@
 {
   "name": "mallard",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "repository": "git@github.com:deejaymarkov99/mallard",
+  "author": "Jake Cataford <jakecataford@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "eslint": "^4.19.1",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "express": "^4.16.3"
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^16.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-react": "^6.24.1",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.7.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "enzyme": "^3.3.0",
+    "jest": "^22.4.3"
+  },
+  "scripts": {
+    "build": "yarn run webpack --mode=development",
+    "server": "yarn build && node server",
+    "test": "yarn run jest"
   }
 }
