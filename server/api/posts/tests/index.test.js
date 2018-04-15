@@ -1,5 +1,3 @@
-const mockResponse = require('jest-mock-express').response;
-
 //rspec style of testing
 describe('PostsController', () => {
   let res;
@@ -7,7 +5,7 @@ describe('PostsController', () => {
 
   beforeEach(() => {
     controller = new PostsController();
-    res = mockResponse();
+    res = {};
   });
 
   it ('returns the resource', () => {
