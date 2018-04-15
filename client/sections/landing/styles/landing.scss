@@ -1,0 +1,20 @@
+@import '../../../styles/colors.scss';
+
+.page-container {
+
+}
+
+.map {
+  height: 400px;
+  background: $mallard-green;
+  border-bottom: 6px solid darken($mallard-green, 3%);
+}
+
+.cardList {
+  margin: 0 auto;
+  width: 400px;
+
+  div {
+    margin: 15px;
+  }
+}
