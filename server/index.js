@@ -6,8 +6,7 @@ const Morgan = require('morgan');
 
 const MongoClient = require('mongodb').MongoClient;
 
-
-const PostsController = require('./api/posts_controller');
+const PostsController = require('./api/posts').controller;
 
 const mongoDbUrl = `mongodb://localhost:27017/mallard-${process.env.NODE_ENV}`;
 
