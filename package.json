@@ -6,9 +6,13 @@
   "author": "Jake Cataford <jakecataford@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "assert": "^1.4.1",
     "babel-core": "^6.26.0",
     "express": "^4.16.3",
+    "jest-mock-express": "^0.1.1",
     "mapbox-gl": "^0.44.2",
+    "mongodb": "^3.0.6",
+    "mongoose": "^5.0.14",
     "morgan": "^1.9.0",
     "prop-types": "^15.6.1",
     "react-mapbox-gl": "^3.8.0"
