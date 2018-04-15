@@ -1,7 +1,6 @@
 const Mongoose = require('mongoose');
-const Schema = Mongoose.schema;
 
-const postSchema = new Schema({
+const postSchema = new Mongoose.Schema({
   body: String,
 });
 

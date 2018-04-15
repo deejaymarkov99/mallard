@@ -1,21 +1,32 @@
-// mongo-environment.js
+const NodeEnvironment = require('jest-environment-node');
+
+const MongoDbMemoryServer = require('mongodb-memory-server');
+
+const mongodbName = 'mallard-test';
+
+const mongod = new MongoDbMemoryServer.default({
+  instance: {
+    dbName: mongodbName,
+  },
+
+  binary: {
+    version: '3.6.4',
+  },
+});
+
 class MongoEnvironment extends NodeEnvironment {
   constructor(config) {
     super(config);
   }
 
   async setup() {
-    console.log('Setup MongoDB Test Environment');
-
-    this.global.__MONGO_URI__ = await global.__MONGOD__.getConnectionString();
-    this.global.__MONGO_DB_NAME__ = global.__MONGO_DB_NAME__;
+    this.global.__MONGO_URI__ = await mongod.getConnectionString();
+    this.global.__MONGO_DB_NAME__ = mongodbName;
 
     await super.setup();
   }
 
   async teardown() {
-    console.log('Teardown MongoDB Test Environment');
-
     await super.teardown();
   }
 
@@ -23,3 +34,5 @@ class MongoEnvironment extends NodeEnvironment {
     return super.runScript(script);
   }
 }
+
+module.exports = MongoEnvironment;
